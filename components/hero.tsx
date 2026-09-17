@@ -7,7 +7,7 @@ export default function Hero() {
       className="relative flex min-h-[100svh] flex-col bg-cream"
     >
       {/* headline */}
-      <div className="relative z-10 mx-auto w-full max-w-[1400px] px-6 pt-20 lg:px-10 lg:pt-24">
+      <div className="relative z-10 mx-auto w-full max-w-[1400px] px-6 pt-20 lg:px-10">
         <h1 className="max-w-[15ch] font-serif text-[clamp(2rem,4vw,3.6rem)] leading-[1.14] text-ink">
           Mahakarya Hunian untuk{" "}
           <em className="text-bronze">Kenyamanan Abadi</em> &amp; Warisan
@@ -15,32 +15,34 @@ export default function Hero() {
         </h1>
       </div>
 
-      {/* hero image: enlarged, anchored to the bottom of the screen so the
-          rooftop rises up beside the headline while the ground stays put */}
+      {/* hero body: image anchored bottom-right; house base sits exactly on
+          the stats bar while the rooftop rises beside the headline. The box
+          keeps the image aspect ratio and is capped so the apex never climbs
+          above the navbar. */}
       <div className="relative z-0 flex-1">
-        <div className="absolute bottom-0 right-0 w-[96%] max-w-[calc((100svh-240px)*2.2)] sm:w-[88%] lg:w-[86%]">
+        <div className="relative ml-auto aspect-[1620/856] w-[97%] sm:w-[94%] lg:absolute lg:bottom-0 lg:right-0 lg:ml-0 lg:w-[min(95%,calc((100svh-250px)*1.8925))]">
           <Image
             src="/images/hero-house.png"
             alt="Mahakarya Residence — rumah modern dua lantai saat senja"
             width={1620}
-            height={1080}
+            height={856}
             priority
-            sizes="(min-width: 1024px) 86vw, 96vw"
+            sizes="(min-width: 640px) 95vw, 97vw"
             className="h-auto w-full"
           />
 
           {/* frosted badge: 4 Baths */}
-          <span className="absolute left-[54%] top-[24%] rounded-2xl border border-white/40 bg-white/30 px-4 py-3 font-serif text-[clamp(0.9rem,1.3vw,1.25rem)] text-ink shadow-md backdrop-blur-md sm:px-5 sm:py-4">
+          <span className="absolute left-[62%] top-[27%] rounded-2xl border border-white/40 bg-white/30 px-4 py-3 font-serif text-[clamp(0.9rem,1.3vw,1.25rem)] text-ink shadow-md backdrop-blur-md sm:px-5 sm:py-4">
             4 Baths
           </span>
 
           {/* frosted badge: 4 Beds */}
-          <span className="absolute bottom-[16%] left-[46%] rounded-2xl border border-white/40 bg-white/30 px-4 py-3 font-serif text-[clamp(0.9rem,1.3vw,1.25rem)] text-ink shadow-md backdrop-blur-md sm:left-[40%] sm:px-5 sm:py-4 lg:left-[34%]">
+          <span className="absolute bottom-[30%] left-[41%] rounded-2xl border border-white/40 bg-white/30 px-4 py-3 font-serif text-[clamp(0.9rem,1.3vw,1.25rem)] text-ink shadow-md backdrop-blur-md sm:px-5 sm:py-4">
             4 Beds
           </span>
 
           {/* left glass card overlapping image edge */}
-          <div className="absolute -left-6 top-[58%] hidden max-w-[250px] rounded-2xl border border-white/50 bg-white/45 p-5 shadow-lg backdrop-blur-md sm:block lg:-left-2 lg:max-w-[280px]">
+          <div className="absolute -left-2 bottom-[12%] hidden max-w-[250px] rounded-2xl border border-white/50 bg-white/45 p-5 shadow-lg backdrop-blur-md sm:block lg:max-w-[280px]">
             <p className="font-serif text-3xl leading-none text-ink/90">01</p>
             <p className="my-1.5 text-sm text-ink/60">—</p>
             <p className="font-serif text-3xl leading-none text-ink/90">03</p>
@@ -69,7 +71,7 @@ export default function Hero() {
       </div>
 
       {/* stats bar */}
-      <div className="relative border-y border-line bg-cream">
+      <div className="relative z-10 border-y border-line bg-cream">
         <div className="mx-auto grid max-w-[1400px] grid-cols-2 lg:grid-cols-4">
           {[
             ["550", "m²", "LAND AREA"],
