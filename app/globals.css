@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+@theme {
+  --color-cream: #f2efe8;
+  --color-cream-deep: #eae6dc;
+  --color-ink: #1a1812;
+  --color-ink-soft: #232017;
+  --color-bronze: #a88757;
+  --color-bronze-deep: #8c6f42;
+  --color-body: #6d6a60;
+  --color-line: #dedacd;
+
+  --font-serif: var(--font-playfair), "Georgia", serif;
+  --font-sans: var(--font-inter), "Segoe UI", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* next/image passes quality via src; disable eslint-style console noise */
+body {
+  background-color: var(--color-cream);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+}
+
+.text-balance {
+  text-wrap: balance;
+}
